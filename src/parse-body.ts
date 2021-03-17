@@ -2,7 +2,6 @@ import type { IncomingMessage } from "http";
 import type { Gunzip, Inflate } from "zlib";
 import zlib from "zlib";
 import querystring from "querystring";
-import { URLSearchParams } from "url";
 import getBody from "raw-body";
 import httpError from "http-errors";
 import contentType from "content-type";
@@ -90,13 +89,12 @@ async function readBody(
  * HTTPClientRequest), Promise the body data contained.
  */
 export async function parseBody(
-  req: Request
-): Promise<{ [param: string]: unknown }> {
-  const { body } = req;
-
+  req: IncomingMessage,
+  body?: unknown
+): Promise<Record<string, unknown>> {
   // If express has already parsed a body as a keyed object, use it.
   if (typeof body === "object" && !(body instanceof Buffer)) {
-    return body as { [param: string]: unknown };
+    return body === null ? {} : (body as Record<string, unknown>);
   }
 
   // Skip requests without content types.
@@ -137,42 +135,4 @@ export async function parseBody(
 
   // If no Content-Type header matches, parse nothing.
   return {};
-}
-
-export async function getGraphQLParams(
-  request: Request
-): Promise<GraphQLParams> {
-  const urlData = new URLSearchParams(request.url?.split("?")[1]);
-  const bodyData = await parseBody(request);
-
-  // GraphQL Query string.
-  let query = urlData.get("query") ?? (bodyData.query as string | null);
-  if (typeof query !== "string") {
-    query = null;
-  }
-
-  // Parse the variables if needed.
-  let variables = (urlData.get("variables") ?? bodyData.variables) as {
-    readonly [name: string]: unknown;
-  } | null;
-  if (typeof variables === "string") {
-    try {
-      variables = JSON.parse(variables);
-    } catch {
-      throw httpError(400, "Variables are invalid JSON.");
-    }
-  } else if (typeof variables !== "object") {
-    variables = null;
-  }
-
-  // Name of GraphQL operation to execute.
-  let operationName =
-    urlData.get("operationName") ?? (bodyData.operationName as string | null);
-  if (typeof operationName !== "string") {
-    operationName = null;
-  }
-
-  const raw = urlData.get("raw") !== null || bodyData.raw !== undefined;
-
-  return { query, variables, operationName, raw };
 }
