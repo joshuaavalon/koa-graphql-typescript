@@ -6,7 +6,8 @@
   "typings": "./lib/index.d.ts",
   "scripts": {
     "prebuild": "rimraf lib",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint --ext .ts"
   },
   "keywords": [],
   "homepage": "https://github.com/joshuaavalon/koa-graphql-typescript#readme",
