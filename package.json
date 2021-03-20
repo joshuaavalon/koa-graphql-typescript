@@ -14,6 +14,9 @@
     "koa",
     "graphql"
   ],
+  "files": [
+    "./lib"
+  ],
   "homepage": "https://github.com/joshuaavalon/koa-graphql-typescript#readme",
   "repository": {
     "type": "git",
