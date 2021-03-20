@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/joshuaavalon/koa-graphql-typescript/compare/v1.0.1...v1.0.2) (2021-03-20)
+
+
+### Bug Fixes
+
+* package.json files ([59332c5](https://github.com/joshuaavalon/koa-graphql-typescript/commit/59332c5e829f7fdc7fe548cff11185b1fd960e9c))
+
 ## [1.0.1](https://github.com/joshuaavalon/koa-graphql-typescript/compare/v1.0.0...v1.0.1) (2021-03-20)
 
 
