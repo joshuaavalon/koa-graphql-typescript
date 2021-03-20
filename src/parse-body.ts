@@ -111,7 +111,7 @@ export async function parseBody(
   }
 
   // Already parsed body we didn't recognise? Parse nothing.
-  if (body !== null) {
+  if (body) {
     return {};
   }
 
