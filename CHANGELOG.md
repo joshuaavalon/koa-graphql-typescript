@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/joshuaavalon/koa-graphql-typescript/compare/v1.0.2...v1.0.3) (2021-03-20)
+
+
+### Bug Fixes
+
+* change to CommonJS ([d3e4bb5](https://github.com/joshuaavalon/koa-graphql-typescript/commit/d3e4bb5b597b470e7035d9d0141cebc22d15e7b5))
+
 ## [1.0.2](https://github.com/joshuaavalon/koa-graphql-typescript/compare/v1.0.1...v1.0.2) (2021-03-20)
 
 
