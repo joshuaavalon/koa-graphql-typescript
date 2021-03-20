@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/joshuaavalon/koa-graphql-typescript/compare/v1.0.3...v1.0.4) (2021-03-20)
+
+
+### Bug Fixes
+
+* undefined empty body ([45e3a5e](https://github.com/joshuaavalon/koa-graphql-typescript/commit/45e3a5e0309d4fa48e18a2be6f79409637772f3c))
+
 ## [1.0.3](https://github.com/joshuaavalon/koa-graphql-typescript/compare/v1.0.2...v1.0.3) (2021-03-20)
 
 
