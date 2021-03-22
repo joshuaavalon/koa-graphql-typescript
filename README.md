@@ -1,6 +1,6 @@
 # GraphQL Koa Middleware
 
-[![License][license_badge]][license] [![Pipelines][pipelines_badge]][pipelines] [![NPM][npm_badge]][npm] [![semantic-release][semantic_release]][semantic_release_badge]
+[![License][license_badge]][license] [![Pipelines][pipelines_badge]][pipelines] [![NPM][npm_badge]][npm] [![semantic-release][semantic_release_badge]][semantic_release]
 
 This is a fork from [koa-graphql] and [express-graphql]. Since koa-graphql does not seems to update its package.json to allow `"graphql": "^15.0.0"`, I forked it.
 
